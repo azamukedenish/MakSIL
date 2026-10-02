@@ -1,11 +1,6 @@
 ---
-title: Latest News
-
-# Listing view
-view: compact
-
-# Optional banner image (relative to `assets/media/` folder).
-banner:
-  caption: ''
-  image: ''
+title: News
+eyebrow: From the lab
+intro: The latest from MakSIL.
+empty: Lab updates, research announcements, and events will be shared here.
 ---

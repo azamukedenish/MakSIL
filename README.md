@@ -1,48 +1,42 @@
-# [Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)
+# MakSIL — Makerere Safe Intelligence Lab
 
-[![Screenshot](preview.png)](https://hugoblox.com/hugo-themes/)
+A responsive Hugo site using the supplied MakSIL logo and its dominant colours: deep red `#770611`, black `#262626`, and white. It uses local layouts with no external theme, font, or JavaScript dependencies. Hugo 0.135.0 is the version configured for deployment.
 
-The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form.
+## Preview and build
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, widget-based Wowchemy page builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+```sh
+hugo server
+hugo --gc --minify
+```
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/hugo-themes/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/wowchemy)
+The preview is at `http://localhost:1313/`; production files are written to `public/`. GitHub Pages and Netlify build configurations are retained. Set `baseURL` in `config/_default/hugo.yaml` to the final domain before publishing, or supply it with `hugo --baseURL` as the deployment workflows do.
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+## Editing the website
 
-[Check out the latest demo](https://research-group.netlify.app/) of what you'll get in less than 60 seconds, or [view the showcase](https://hugoblox.com/creators/).
+- `layouts/index.html`: homepage hero and section introductions.
+- `data/research.json`: the six research areas, shared by the homepage and Research page.
+- `content/`: page copy. People and Opportunities intentionally await verified profiles, vacancies, and contact information.
+- `config/_default/menus.yaml`: the nine navigation destinations.
+- `config/_default/params.yaml`: site description and optional public contact email. Setting `contact_email` adds a contact button to Opportunities.
+- `assets/css/maksil.css`: palette, typography, layout, and mobile styles.
+- `Logo/MakSIL-Logo.png`: original logo; `static/maksil-logo.png` is the identical served copy. CSS frames the original image without modifying it.
 
-The integrated [**Wowchemy**](https://hugoblox.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+To publish a project, news update, publication, or resource, add a Markdown page under `content/projects/`, `content/post/`, `content/publication/`, or `content/resources/`. For example:
 
-- 👉 [**Get Started**](https://hugoblox.com/hugo-themes/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Wowchemy research community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- ⬇️ **Automatically import citations from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 🐦 Share your new site with the community: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=%23MadeWithWowchemy&src=typed_query)
-- 🗳 [Take the survey and help us improve #OpenSource](https://forms.gle/NioD9VhUg7PNmdCAA)
-- 🚀 [Contribute improvements](https://github.com/HugoBlox/hugo-blox-builder/blob/main/CONTRIBUTING.md) or [suggest improvements](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/hugo-tutorials/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+```yaml
+---
+title: Your research title
+date: 2026-10-02
+summary: A short, factual description of the work.
+draft: true
+featured: true
+---
 
-## We ask you, humbly, to support this open source movement
+Add the full details here. Set draft to false when ready to publish.
+```
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
+The homepage automatically displays the three newest publications and news updates, and up to three projects marked `featured: true`. Collection pages list all published entries. Empty collections show a clear forthcoming message.
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+## Original template
 
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
-
-## Demo credits
-
-Please replace the demo images with your own.
-
-- [Female scientist](https://unsplash.com/photos/uVnRa6mOLOM)
-- [2 Coders](https://unsplash.com/photos/kwzWjTnDPLk)
-- [Cafe](https://unsplash.com/photos/RnDGGnMEOao)
-- Blog posts
-  - https://unsplash.com/photos/AndE50aaHn4
-  - https://unsplash.com/photos/OYzbqk2y26c
-- Avatars
-  - https://unsplash.com/photos/5yENNRbbat4
-  - https://unsplash.com/photos/WNoLnJo7tS8
+The site began with the Hugo Research Group starter. Its example authors, papers, posts, and auxiliary pages are preserved in `example-content/`, outside Hugo's published content directory. They are reference material, not MakSIL records. Some use legacy Wowchemy shortcodes and must be adapted before being copied into the new site. The original media, theme metadata, and Go manifest remain as reference; external module imports are disabled.

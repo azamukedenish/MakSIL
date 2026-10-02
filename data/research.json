@@ -1,0 +1,32 @@
+[
+  {
+    "title": "AI Safety & Alignment",
+    "description": "Building AI systems that act in accordance with human intentions and values.",
+    "id": "alignment"
+  },
+  {
+    "title": "Model Evaluation",
+    "description": "Understanding model capabilities, limitations, and risks through rigorous evaluation.",
+    "id": "evaluation"
+  },
+  {
+    "title": "Robustness & Security",
+    "description": "Investigating how AI systems behave under uncertainty, distribution shifts, and adversarial attacks.",
+    "id": "robustness"
+  },
+  {
+    "title": "Responsible AI",
+    "description": "Studying fairness, transparency, and accountability across the AI lifecycle.",
+    "id": "responsible-ai"
+  },
+  {
+    "title": "AI Governance",
+    "description": "Exploring the policies, institutions, and practices needed to govern AI responsibly.",
+    "id": "governance"
+  },
+  {
+    "title": "AI Safety in African Contexts",
+    "description": "Grounding AI safety research in African languages, communities, and deployment contexts.",
+    "id": "african-contexts"
+  }
+]

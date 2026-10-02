@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}MakSIL — Makerere Safe Intelligence Lab{{ else }}{{ .Title }} | MakSIL{{ end }}</title>
+  <meta name="description" content="{{ .Description | default .Params.intro | default site.Params.description }}">
+  <meta name="theme-color" content="#770611">
+  <link rel="icon" href="{{ "maksil-logo.png" | relURL }}" type="image/png">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ $css := resources.Get "css/maksil.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ "" | relURL }}" aria-label="MakSIL home">{{ partial "logo.html" . }}</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+      <nav id="site-nav" aria-label="Main navigation">
+        {{ range site.Menus.main }}<a href="{{ .URL | relURL }}"{{ if eq $.RelPermalink (.URL | relURL) }} aria-current="page"{{ end }}>{{ .Name }}</a>{{ end }}
+      </nav>
+    </div>
+  </header>
+  <main id="main">{{ block "main" . }}{{ end }}</main>
+  <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="{{ "" | relURL }}" aria-label="MakSIL home">{{ partial "logo.html" . }}</a><p>Makerere Safe Intelligence Lab<br>Safe intelligence. Shared responsibility.</p><a href="{{ "about/" | relURL }}">About the lab <span aria-hidden="true">↗</span></a></div><div class="container footer-bottom"><span>© {{ now.Year }} MakSIL</span><span>AI safety, with African contexts at the centre.</span><a href="#main">Back to top ↑</a></div></footer>
+  <script src="{{ "navigation.js" | relURL }}" defer></script>
+</body>
+</html>
