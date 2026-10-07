@@ -3,12 +3,12 @@ groups:
     title: Lab leadership
     members:
       - name: Dr. Denish Azamuke
-        role: PI
-        role_title: Principal Investigator
+        role: Principal Investigator
+        qualification: PhD in Computer Science
         photo: PI.png
       - name: Dr. Marriette Katarahweire
-        role: Co-PI
-        role_title: Co-Principal Investigator
+        role: Co-Principal Investigator
+        qualification: PhD in Computer Science
         photo: CoPI.png
   - id: phd-students
     title: PhD Students

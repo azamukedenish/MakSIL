@@ -7,5 +7,5 @@
       <img class="member-portrait" src="{{ $portrait.RelPermalink }}" srcset="{{ $small.RelPermalink }} 360w, {{ $portrait.RelPermalink }} 598w" sizes="(max-width: 480px) calc(100vw - 40px), 400px" alt="Portrait of {{ $member.name }}" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}" loading="lazy" decoding="async">
     {{ else }}{{ errorf "People photo %q is missing from the people folder" $member.photo }}{{ end }}
   {{ end }}
-  <div class="member-details">{{ with .role }}<p class="member-role">{{ . }}</p>{{ end }}<h3>{{ .name }}</h3>{{ with .role_title }}<p class="member-role-title">{{ . }}</p>{{ end }}</div>
+  <div class="member-details">{{ with .role }}<p class="member-role">{{ . }}</p>{{ end }}<h3>{{ .name }}</h3>{{ with .role_title }}<p class="member-role-title">{{ . }}</p>{{ end }}{{ with .qualification }}<p class="member-qualification">{{ . }}</p>{{ end }}</div>
 </article>

@@ -736,6 +736,30 @@ a.research-card:hover .card-top {
   height:auto;
   background:#f5f3f3
 }
+.member-group[aria-labelledby="leadership-heading"] .member-grid {
+  width:100%;
+  max-width:432px
+}
+.member-group[aria-labelledby="leadership-heading"] .member-details {
+  padding:16px 10px
+}
+.member-group[aria-labelledby="leadership-heading"] .member-details h3 {
+  font-size:15px;
+  letter-spacing:-.25px;
+  white-space:nowrap
+}
+.member-group[aria-labelledby="leadership-heading"] .member-role {
+  font-size:13px;
+  letter-spacing:0;
+  line-height:1.4
+}
+.member-group[aria-labelledby="leadership-heading"] .member-qualification {
+  font-size:13px;
+  margin-bottom:0
+}
+.member-group[aria-labelledby="leadership-heading"] .member-role-title {
+  font-size:16px
+}
 .member-details {
   padding:24px
 }
@@ -752,7 +776,7 @@ a.research-card:hover .card-top {
   letter-spacing:-.5px;
   margin-bottom:10px
 }
-.member-role-title {
+.member-role-title,.member-qualification {
   font-size:var(--text-copy);
   margin-bottom:0
 }
@@ -777,6 +801,10 @@ a.research-card:hover .card-top {
     grid-template-columns:1fr;
     max-width:400px;
     gap:28px
+  }
+  .member-group[aria-labelledby="leadership-heading"] .member-grid {
+    width:100%;
+    max-width:200px
   }
   .member-group {
     margin-top:36px
