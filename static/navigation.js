@@ -11,5 +11,5 @@ if (toggle && nav) {
   });
   nav.addEventListener('click', event => { if (event.target.closest('a')) close(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { close(); toggle.focus(); } });
-  matchMedia('(min-width: 1101px)').addEventListener('change', close);
+  matchMedia('(min-width: 1281px)').addEventListener('change', close);
 }

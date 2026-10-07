@@ -3,7 +3,13 @@
   --black:#262626;
   --white:#fff;
   --line:rgba(38,38,38,.18);
-  --font:Arial,Helvetica,sans-serif
+  --font:Arial,Helvetica,sans-serif;
+  --text-body:1.125rem;
+  --text-copy:1rem;
+  --text-control:.9375rem;
+  --text-small:.875rem;
+  --text-meta:.8125rem;
+  --text-label:.75rem
 }
 * {
   box-sizing:border-box
@@ -17,7 +23,7 @@ body {
   background:var(--white);
   color:var(--black);
   font-family:var(--font);
-  font-size:16px;
+  font-size:var(--text-body);
   line-height:1.65
 }
 a {
@@ -79,7 +85,7 @@ a:focus-visible,button:focus-visible {
   color:var(--black)
 }
 .brand-caption {
-  font-size:10px;
+  font-size:var(--text-small);
   line-height:1.35;
   font-weight:400;
   letter-spacing:0;
@@ -94,7 +100,7 @@ nav {
   align-items:center
 }
 nav a {
-  font-size:12px;
+  font-size:var(--text-control);
   font-weight:600;
   line-height:2.5;
   position:relative
@@ -123,7 +129,7 @@ nav a[aria-current]:after {
 }
 .eyebrow {
   text-transform:uppercase;
-  font-size:11px;
+  font-size:var(--text-label);
   font-weight:700;
   letter-spacing:1.65px;
   line-height:1.5;
@@ -154,13 +160,14 @@ em {
   color:var(--red)
 }
 .hero-description {
-  font-size:17px;
-  max-width:370px;
+  font-size:var(--text-body);
+  max-width:400px;
   line-height:1.7;
   margin-bottom:30px
 }
 .hero-actions {
   display:flex;
+  flex-wrap:wrap;
   align-items:center;
   gap:28px
 }
@@ -171,7 +178,7 @@ em {
   align-items:center;
   justify-content:space-between;
   gap:30px;
-  font-size:12px;
+  font-size:var(--text-control);
   font-weight:600;
   line-height:1.5;
   padding:17px 22px;
@@ -186,7 +193,7 @@ em {
   display:inline-flex;
   align-items:center;
   gap:20px;
-  font-size:12px;
+  font-size:var(--text-control);
   font-weight:600;
   line-height:1.6;
   padding-block:8px;
@@ -246,7 +253,7 @@ em {
 }
 .video-preview-label {
   top:20px;
-  font-size:10px;
+  font-size:var(--text-label);
   font-weight:600;
   letter-spacing:1.6px;
   text-transform:uppercase
@@ -256,7 +263,7 @@ em {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  font-size:12px;
+  font-size:var(--text-control);
   font-weight:600
 }
 .video-preview-action>span {
@@ -313,7 +320,7 @@ em {
   border-radius:20px;
   background:rgba(0,0,0,.5);
   color:var(--white);
-  font-size:10px;
+  font-size:var(--text-meta);
   line-height:1.5;
   cursor:pointer
 }
@@ -363,7 +370,7 @@ em {
 }
 .video-preview-caption .eyebrow {
   color:var(--red);
-  font-size:9px;
+  font-size:var(--text-label);
   margin-bottom:8px
 }
 .video-preview-caption strong {
@@ -374,7 +381,7 @@ em {
   margin-bottom:5px
 }
 .video-preview-caption>span:last-child {
-  font-size:13px
+  font-size:var(--text-copy)
 }
 .video-dialog {
   width:min(420px,calc(100vw - 32px),calc((100dvh - 160px) * 9 / 16 + 32px));
@@ -433,7 +440,7 @@ em {
   align-items:center;
   justify-content:space-between;
   padding-top:12px;
-  font-size:12px;
+  font-size:var(--text-control);
   font-weight:600;
   color:var(--red)
 }
@@ -462,12 +469,12 @@ em {
 .mission-strip span {
   text-transform:uppercase;
   letter-spacing:1.6px;
-  font-size:10px;
+  font-size:var(--text-label);
   font-weight:700;
   color:var(--red)
 }
 .mission-strip p {
-  font-size:17px;
+  font-size:var(--text-body);
   margin:0
 }
 .mission-strip a {
@@ -515,7 +522,7 @@ h2 {
   display:flex;
   justify-content:space-between;
   color:var(--red);
-  font-size:11px;
+  font-size:var(--text-label);
   margin-bottom:32px
 }
 .card-top>span:last-child {
@@ -530,8 +537,8 @@ h2 {
   max-width:240px
 }
 .research-card p {
-  font-size:13px;
-  line-height:1.8;
+  font-size:var(--text-copy);
+  line-height:1.65;
   margin:0;
   max-width:310px
 }
@@ -565,12 +572,12 @@ a.research-card:hover .card-top {
   margin-bottom:7px
 }
 .empty-state p {
-  font-size:14px;
+  font-size:var(--text-copy);
   max-width:620px;
   margin:0
 }
 .status-label {
-  font-size:9px;
+  font-size:var(--text-meta);
   letter-spacing:1.2px;
   text-transform:uppercase;
   border:1px solid var(--line);
@@ -593,8 +600,8 @@ a.research-card:hover .card-top {
   margin-bottom:20px
 }
 .people-inner p:not(.eyebrow) {
-  font-size:15px;
-  line-height:1.8;
+  font-size:var(--text-copy);
+  line-height:1.65;
   margin-bottom:25px
 }
 .button-white {
@@ -628,7 +635,7 @@ a.research-card:hover .card-top {
   line-height:1.1
 }
 .join-inner p {
-  font-size:15px;
+  font-size:var(--text-copy);
   margin-bottom:24px
 }
 .site-footer {
@@ -642,13 +649,13 @@ a.research-card:hover .card-top {
   padding-bottom:32px
 }
 .footer-top p {
-  font-size:12px;
+  font-size:var(--text-small);
   line-height:1.8;
   margin:0
 }
 .footer-top>a:last-child {
   margin-left:auto;
-  font-size:12px
+  font-size:var(--text-small)
 }
 .footer-brand {
   font-size:34px
@@ -657,9 +664,10 @@ a.research-card:hover .card-top {
   border-top:1px solid var(--line);
   padding-block:20px 26px;
   display:flex;
+  flex-wrap:wrap;
   justify-content:space-between;
   gap:25px;
-  font-size:10px
+  font-size:var(--text-small)
 }
 .page-content {
   min-height:65vh;
@@ -714,10 +722,10 @@ a.research-card:hover .card-top {
   margin-bottom:16px
 }
 .feed p {
-  font-size:14px
+  font-size:var(--text-copy)
 }
 .feed .eyebrow {
-  font-size:10px;
+  font-size:var(--text-meta);
   color:var(--red)
 }
 @media(min-width:1500px) {
@@ -748,7 +756,7 @@ a.research-card:hover .card-top {
     width:calc(100% - 80px)
   }
 }
-@media(max-width:1100px) {
+@media(max-width:1280px) {
   .header-inner {
     min-height:86px;
     flex-wrap:wrap;
@@ -763,7 +771,7 @@ a.research-card:hover .card-top {
     color:var(--black);
     border:1px solid var(--line);
     padding:7px 13px;
-    font-size:12px
+    font-size:var(--text-control)
   }
   .menu-toggle[hidden] {
     display:none
@@ -779,6 +787,8 @@ a.research-card:hover .card-top {
   .has-js nav.is-open {
     display:flex
   }
+}
+@media(max-width:1100px) {
   .hero {
     padding-block:55px
   }
@@ -817,7 +827,7 @@ a.research-card:hover .card-top {
     letter-spacing:-3px
   }
   .hero .eyebrow {
-    font-size:10px;
+    font-size:var(--text-label);
     letter-spacing:1px
   }
   .hero-description {
@@ -846,7 +856,7 @@ a.research-card:hover .card-top {
     width:100%
   }
   .mission-strip p {
-    font-size:14px;
+    font-size:var(--text-copy);
     max-width:85%
   }
   .mission-strip a {
@@ -862,7 +872,7 @@ a.research-card:hover .card-top {
     margin-bottom:30px
   }
   .section-heading .eyebrow {
-    font-size:10px
+    font-size:var(--text-label)
   }
   .research-grid {
     grid-template-columns:repeat(2,1fr)
@@ -872,9 +882,6 @@ a.research-card:hover .card-top {
   }
   .research-card h2,.research-card h3 {
     font-size:20px
-  }
-  .research-card p {
-    font-size:13px
   }
   .empty-state {
     gap:16px;
@@ -940,6 +947,15 @@ a.research-card:hover .card-top {
   }
 }
 @media(max-width:420px) {
+  .header-inner {
+    gap:12px
+  }
+  .video-preview-label {
+    left:16px;
+    right:auto;
+    max-width:calc(100% - 152px);
+    letter-spacing:1px
+  }
   .research-grid {
     grid-template-columns:1fr
   }
@@ -964,13 +980,13 @@ a.research-card:hover .card-top {
     padding:20px
   }
   .identity-top {
-    font-size:9px
+    font-size:var(--text-label)
   }
   .hero h1 {
     font-size:56px
   }
   .brand-caption {
-    font-size:9px
+    font-size:var(--text-small)
   }
 }
 @media(prefers-reduced-motion:reduce) {
@@ -1016,7 +1032,7 @@ a.research-card:hover .card-top {
 .footer-brand {
   width: 200px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
   .site-header .brand {
     width: 240px;
   }
