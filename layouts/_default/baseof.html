@@ -25,5 +25,6 @@
   <main id="main">{{ block "main" . }}{{ end }}</main>
   <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="{{ "" | relURL }}" aria-label="MakSIL home">{{ partial "logo.html" . }}</a><p>Makerere Safe Intelligence Lab<br>Safe intelligence. Shared responsibility.</p><a href="{{ "about/" | relURL }}">About the lab <span aria-hidden="true">↗</span></a></div><div class="container footer-bottom"><span>© {{ now.Year }} MakSIL</span><span>AI safety, with African contexts at the centre.</span><a href="#main">Back to top ↑</a></div></footer>
   <script src="{{ "navigation.js" | relURL }}" defer></script>
+  {{ if and .IsHome site.Params.hero_video }}<script src="{{ "hero-video.js" | relURL }}" defer></script>{{ end }}
 </body>
 </html>

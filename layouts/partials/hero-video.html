@@ -1,0 +1,22 @@
+{{ with site.Params.hero_video }}
+{{ $url := printf "https://www.youtube.com/shorts/%s" .youtube_id }}
+{{ $title := printf "%s: %s" .title .description }}
+<figure class="hero-video">
+  <a class="hero-video-link" href="{{ $url }}" data-video-id="{{ .youtube_id }}" data-video-title="{{ $title }}" aria-label="Play {{ $title }}" aria-haspopup="dialog" aria-controls="hero-video-dialog">
+    <span class="video-preview">
+      <img class="video-preview-backdrop" src="{{ .poster | relURL }}" alt="" aria-hidden="true" width="1078" height="1920">
+      <img class="video-preview-image" src="{{ .poster | relURL }}" alt="" width="1078" height="1920" fetchpriority="high">
+      <span class="video-preview-label">MakSIL / In action</span>
+      <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 4.5v15l12-7.5z" fill="currentColor"/></svg></span>
+      <span class="video-preview-action">Watch the demo <span aria-hidden="true">↗</span></span>
+    </span>
+    <span class="video-preview-caption"><span class="eyebrow">Featured video</span><strong>{{ .title }}</strong><span>{{ .description }}</span></span>
+  </a>
+  <button type="button" class="video-motion-toggle" aria-label="Pause play button animation" hidden>Pause motion</button>
+</figure>
+<dialog id="hero-video-dialog" class="video-dialog" aria-labelledby="hero-video-dialog-title">
+  <div class="video-dialog-header"><h2 id="hero-video-dialog-title">{{ .title }}</h2><button type="button" class="video-dialog-close" aria-label="Close video" autofocus><span aria-hidden="true">×</span></button></div>
+  <div class="video-player" data-video-player></div>
+  <a class="video-external-link" href="{{ $url }}" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</dialog>
+{{ end }}

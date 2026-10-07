@@ -2,3 +2,8 @@ description: 'Makerere Safe Intelligence Lab — advancing safe, reliable, and r
 lab_name: Makerere Safe Intelligence Lab
 # Add a verified public contact address when available.
 contact_email: ''
+hero_video:
+  youtube_id: QZ0LDkXiBqI
+  title: Note Scan
+  description: AI-powered banknote authentication
+  poster: note-scan-preview.jpg
