@@ -1010,16 +1010,30 @@ a.research-card:hover .card-top {
   max-width: none;
   margin: 0;
 }
+.site-header .brand {
+  width: 300px;
+}
 .footer-brand {
   width: 200px;
+}
+@media (max-width: 1100px) {
+  .site-header .brand {
+    width: 240px;
+  }
 }
 @media (max-width: 760px) {
   .brand {
     width: 190px;
   }
+  .site-header .brand {
+    width: 220px;
+  }
 }
 @media (max-width: 420px) {
   .brand {
     width: 170px;
+  }
+  .site-header .brand {
+    width: min(200px, calc(100vw - 150px));
   }
 }

@@ -6,7 +6,7 @@
   <title>{{ if .IsHome }}MakSIL — Makerere Safe Intelligence Lab{{ else }}{{ .Title }} | MakSIL{{ end }}</title>
   <meta name="description" content="{{ .Description | default .Params.intro | default site.Params.description }}">
   <meta name="theme-color" content="#770611">
-  <link rel="icon" href="{{ "maksil-logo.png" | relURL }}" type="image/png">
+  <link rel="icon" href="{{ partial "logo-url.html" . }}" type="image/png">
   <link rel="canonical" href="{{ .Permalink }}">
   {{ $css := resources.Get "css/maksil.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
