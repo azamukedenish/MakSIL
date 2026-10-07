@@ -1,1 +1,17 @@
-{{ $pages := where site.RegularPages "Section" .section }}{{ if eq .section "projects" }}{{ $pages = where $pages "Params.featured" true }}{{ end }}{{ if $pages }}<div class="feed">{{ range first .limit ($pages.ByDate.Reverse) }}<article><p class="eyebrow">{{ .Date.Format "02 Jan 2006" }}</p><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Summary | plainify | truncate 200 }}</p><a class="text-link" href="{{ .RelPermalink }}">Read more <span aria-hidden="true">↗</span></a></article>{{ end }}</div>{{ else }}<div class="empty-state"><span class="empty-symbol" aria-hidden="true">↗</span><div><h3>{{ .emptyTitle }}</h3><p>{{ .emptyText }}</p></div><span class="status-label">Forthcoming</span></div>{{ end }}
+{{ $pages := where site.RegularPages "Section" .section }}
+{{ if eq .section "projects" }}{{ $pages = where $pages "Params.featured" true }}{{ end }}
+{{ if $pages }}
+<div class="feed">
+  {{ range first .limit ($pages.ByDate.Reverse) }}
+  <article>
+    <p class="eyebrow">{{ if eq .Section "publication" }}{{ .Params.publication_year | default (.Date.Format "2006") }}{{ with .Params.publication_type }} / {{ . }}{{ end }}{{ else }}{{ .Date.Format "02 Jan 2006" }}{{ end }}</p>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ if eq .Section "publication" }}{{ with .Params.publication }}<p class="publication-venue">{{ . }}</p>{{ end }}{{ end }}
+    <p>{{ .Summary | plainify | truncate 200 }}</p>
+    <a class="text-link" href="{{ .RelPermalink }}">{{ if eq .Section "publication" }}Publication details{{ else }}Read more{{ end }} <span aria-hidden="true">↗</span></a>
+  </article>
+  {{ end }}
+</div>
+{{ else }}
+<div class="empty-state"><span class="empty-symbol" aria-hidden="true">↗</span><div><h3>{{ .emptyTitle }}</h3><p>{{ .emptyText }}</p></div><span class="status-label">Forthcoming</span></div>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="container page-content publication-page">
+  <a class="text-link publication-back" href="{{ "publication/" | relURL }}"><span aria-hidden="true">←</span> All publications</a>
+  <header class="page-heading">
+    <p class="eyebrow">{{ .Params.publication_year | default (.Date.Format "2006") }}{{ with .Params.publication_type }} / {{ . }}{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.authors }}<p class="publication-authors">{{ delimit . ", " }}</p>{{ end }}
+    {{ with .Params.publication }}<p class="publication-venue">{{ . }}</p>{{ end }}
+    {{ with .Params.url_paper }}<a class="button" href="{{ . }}">Read paper <span aria-hidden="true">↗</span></a>{{ end }}
+  </header>
+  <div class="prose">
+    <h2>About this publication</h2>
+    {{ .Content }}
+    {{ with .Params.doi }}<p class="publication-doi">DOI: <a href="{{ printf "https://doi.org/%s" . }}">{{ . }}</a></p>{{ end }}
+  </div>
+</article>
+{{ end }}
