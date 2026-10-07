@@ -15,7 +15,9 @@ The preview is at `http://localhost:1313/`; production files are written to `pub
 
 - `layouts/index.html`: homepage hero and section introductions.
 - `data/research.json`: the six research areas, shared by the homepage and Research page.
-- `content/`: page copy. People and Opportunities intentionally await verified profiles, vacancies, and contact information.
+- `content/`: page copy. Opportunities intentionally awaits vacancies and contact information.
+- `data/people.yaml`: names, roles, portrait filenames, and groups on the People page. Leadership currently lists the PI and Co-PI; add future profiles to the PhD, MSc, undergraduate, or alumni group's `members` list.
+- `people/`: original portraits. This folder is mounted into Hugo's image pipeline, so replacing a portrait here updates the website on rebuild. The site generates smaller WebP versions for display while preserving the original framing. A profile's `photo` value must match its filename, including case.
 - `config/_default/menus.yaml`: the nine navigation destinations.
 - `config/_default/params.yaml`: site description, homepage video, and optional public contact email. Setting `contact_email` adds a contact button to Opportunities.
 - `hero_video` in that file: set the YouTube ID, title, description, and poster filename to change the homepage preview. Its poster lives in `static/note-scan-preview.jpg`; replace it with the new video's thumbnail when changing videos. The play button opens a portrait YouTube player; the video loads only after a click. `layouts/partials/hero-video.html` and `static/hero-video.js` control the preview and player.

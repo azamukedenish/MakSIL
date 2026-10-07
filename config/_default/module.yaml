@@ -1,2 +1,7 @@
 # MakSIL uses the local Hugo layouts and has no external theme dependencies.
 imports: []
+mounts:
+  - source: assets
+    target: assets
+  - source: people
+    target: assets/people

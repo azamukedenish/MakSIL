@@ -1,0 +1,28 @@
+groups:
+  - id: leadership
+    title: Lab leadership
+    members:
+      - name: Dr. Denish Azamuke
+        role: PI
+        role_title: Principal Investigator
+        photo: PI.png
+      - name: Dr. Marriette Katarahweire
+        role: Co-PI
+        role_title: Co-Principal Investigator
+        photo: CoPI.png
+  - id: phd-students
+    title: PhD Students
+    empty: PhD student profiles will be added here.
+    members: []
+  - id: msc-students
+    title: MSc Students of Computer Science
+    empty: MSc Computer Science student profiles will be added here.
+    members: []
+  - id: undergraduate-students
+    title: Undergraduate Students
+    empty: Undergraduate student profiles will be added here.
+    members: []
+  - id: alumni
+    title: Alumni
+    empty: Alumni profiles will be added here.
+    members: []
