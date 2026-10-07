@@ -21,6 +21,7 @@ The preview is at `http://localhost:1313/`; production files are written to `pub
 - `hero_video` in that file: set the YouTube ID, title, description, and poster filename to change the homepage preview. Its poster lives in `static/note-scan-preview.jpg`; replace it with the new video's thumbnail when changing videos. The play button opens a portrait YouTube player; the video loads only after a click. `layouts/partials/hero-video.html` and `static/hero-video.js` control the preview and player.
 - `assets/css/maksil.css`: palette, typography, layout, and mobile styles.
 - `Logo/MakSIL-Logo.png`: original logo; `static/maksil-logo.png` is the served copy. After replacing the original, run `cp Logo/MakSIL-Logo.png static/maksil-logo.png` and rebuild the site. Hugo publishes files from `static/`, so changing `Logo/` alone does not update the website. CSS preserves the complete 3:1 artwork.
+- `Logo/Icon.png`: original shield icon for browser tabs; `static/maksil-icon.png` is the served favicon. After replacing it, run `cp Logo/Icon.png static/maksil-icon.png` and rebuild. Its URL includes a content hash so browsers refresh the icon when it changes.
 
 To publish a project, news update, publication, or resource, add a Markdown page under `content/projects/`, `content/post/`, `content/publication/`, or `content/resources/`. For example:
 
