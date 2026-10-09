@@ -307,30 +307,6 @@ em {
 .motion-ready .video-play-button:after {
   animation-delay:-1.4s
 }
-.motion-paused .video-play-button,.motion-paused .video-play-button:before,.motion-paused .video-play-button:after {
-  animation-play-state:paused
-}
-.video-motion-toggle {
-  position:absolute;
-  z-index:2;
-  top:14px;
-  right:14px;
-  padding:7px 12px;
-  border:1px solid rgba(255,255,255,.4);
-  border-radius:20px;
-  background:rgba(0,0,0,.5);
-  color:var(--white);
-  font-size:var(--text-meta);
-  line-height:1.5;
-  cursor:pointer
-}
-.video-motion-toggle[hidden] {
-  display:none
-}
-.video-motion-toggle:hover {
-  background:var(--white);
-  color:var(--black)
-}
 @keyframes video-play-wave {
   from {
     transform:scale(1);
@@ -352,9 +328,6 @@ em {
 @media(prefers-reduced-motion:reduce) {
   .hero-video .video-play-button,.hero-video .video-play-button:before,.hero-video .video-play-button:after {
     animation:none
-  }
-  .video-motion-toggle {
-    display:none
   }
 }
 .hero-video-link:hover .video-play-button,.hero-video-link:focus-visible .video-play-button {

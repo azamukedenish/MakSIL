@@ -1,17 +1,9 @@
 (() => {
   const initializeMotion = () => {
     const card = document.querySelector('.hero-video');
-    const toggle = card?.querySelector('.video-motion-toggle');
-    if (!card || !toggle || card.classList.contains('motion-ready')) return;
+    if (!card || card.classList.contains('motion-ready')) return;
 
     card.classList.add('motion-ready');
-    toggle.hidden = false;
-    toggle.setAttribute('aria-label', 'Pause play button animation');
-    toggle.addEventListener('click', () => {
-      const paused = card.classList.toggle('motion-paused');
-      toggle.textContent = paused ? 'Resume motion' : 'Pause motion';
-      toggle.setAttribute('aria-label', paused ? 'Resume play button animation' : 'Pause play button animation');
-    });
   };
 
   const initializeVideo = () => {
