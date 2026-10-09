@@ -18,12 +18,12 @@
       {{ range .Pages }}
       <article class="publication-entry">
         {{ with .Params.publication_type }}<p class="publication-kind">{{ . }}</p>{{ end }}
-        <h3 class="publication-title"><a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a></h3>
+        <h3 class="publication-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         {{ with .Params.authors }}<p class="publication-authors">{{ delimit . ", " }}</p>{{ end }}
         {{ with .Params.publication }}<p class="publication-venue">{{ . }}</p>{{ end }}
         <div class="publication-links">
           {{ with .Params.url_paper }}<a class="text-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">Read paper <span aria-hidden="true">↗</span></a>{{ end }}
-          <a class="text-link" href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">Details <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="{{ .RelPermalink }}">Details <span aria-hidden="true">→</span></a>
         </div>
       </article>
       {{ end }}
