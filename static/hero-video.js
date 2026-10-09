@@ -43,7 +43,7 @@
         opener = link;
 
         const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&loop=1&playlist=${videoId}`;
         iframe.title = link.dataset.videoTitle || 'MakSIL introduction video';
         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
         iframe.allowFullscreen = true;
