@@ -491,7 +491,8 @@ em {
   object-position:center 49%
 }
 .mission-strip {
-  border-block:1px solid var(--line)
+  background:var(--red);
+  color:var(--white)
 }
 .mission-strip>.container {
   display:flex;
@@ -505,7 +506,10 @@ em {
   letter-spacing:1.6px;
   font-size:var(--text-label);
   font-weight:700;
-  color:var(--red)
+  color:inherit
+}
+.mission-label:focus-visible {
+  outline-color:var(--white)
 }
 .mission-strip p {
   font-size:var(--text-body);
@@ -647,7 +651,6 @@ a.research-card:hover .card-top {
 }
 .join-section {
   padding-block:58px 75px;
-  border-top:2px solid var(--red);
   margin-top:5px
 }
 .join-section .eyebrow {
