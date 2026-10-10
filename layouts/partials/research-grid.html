@@ -2,7 +2,7 @@
 <div class="research-grid">
   {{ range $i, $area := site.Data.research }}
     {{ if $isResearchPage }}<article class="research-card" id="{{ .id }}">{{ else }}<a class="research-card" id="{{ .id }}" href="{{ "research/" | relURL }}#{{ .id }}">{{ end }}
-      <div class="card-top"><span>{{ printf "%02d" (add $i 1) }}</span>{{ if not $isResearchPage }}<span aria-hidden="true">↗</span>{{ end }}</div>
+      <div class="card-top"><span>{{ printf "%02d" (add $i 1) }}</span>{{ if not $isResearchPage }}<span>{{ partial "arrow.html" "up-right" }}</span>{{ end }}</div>
       {{ if $isResearchPage }}<h2>{{ .title }}</h2>{{ else }}<h3>{{ .title }}</h3>{{ end }}
       <p>{{ .description }}</p>
     {{ if $isResearchPage }}</article>{{ else }}</a>{{ end }}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="container page-content project-page">
+  <p><a class="text-link" href="{{ "projects/" | relURL }}">{{ partial "arrow.html" "left" }} All projects</a></p>
+  <header class="page-heading">
+    <p class="eyebrow">{{ .Params.eyebrow | default "Research project" }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="page-intro">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">
+    <h2>About the project</h2>
+    {{ .Content }}
+    {{ if .Params.youtube_id }}
+    <h2>Project demonstration</h2>
+    {{ partial "project-video.html" . }}
+    {{ end }}
+    {{ with .Params.url_paper }}
+    <h2>Related paper</h2>
+    {{ with $.Params.paper_title }}<p>{{ . }}</p>{{ end }}
+    <a class="button" href="{{ . }}" target="_blank" rel="noopener noreferrer">Read paper {{ partial "arrow.html" "up-right" }}</a>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

@@ -12,6 +12,6 @@
     {{ else }}<p class="member-empty">{{ .empty }}</p>{{ end }}
   </section>
   {{ end }}
-  <div class="people-join"><p>Interested in being part of MakSIL?</p><a class="text-link" href="{{ "opportunities/" | relURL }}">Explore opportunities <span aria-hidden="true">↗</span></a></div>
+  <div class="people-join"><p>Interested in being part of MakSIL?</p><a class="text-link" href="{{ "opportunities/" | relURL }}">Explore opportunities {{ partial "arrow.html" "up-right" }}</a></div>
 </article>
 {{ end }}

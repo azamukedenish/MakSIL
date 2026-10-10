@@ -1,0 +1,9 @@
+{{- $rotation := -45 -}}
+{{- if eq . "right" -}}
+  {{- $rotation = 0 -}}
+{{- else if eq . "left" -}}
+  {{- $rotation = 180 -}}
+{{- else if eq . "up" -}}
+  {{- $rotation = -90 -}}
+{{- end -}}
+<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><g transform="rotate({{ $rotation }} 12 12)"><path d="M2 12h19" stroke="currentColor" stroke-width="1.1" stroke-linecap="butt"/><path d="m17 9.5 5 2.5-5 2.5z" fill="currentColor"/></g></svg>

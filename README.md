@@ -19,14 +19,14 @@ The preview is at `http://localhost:1313/`; production files are written to `pub
 - `data/people.yaml`: names, roles, portrait filenames, and groups on the People page. Leadership currently lists the PI and Co-PI; add future profiles to the PhD, MSc, undergraduate, or alumni group's `members` list.
 - `people/`: original portraits. This folder is mounted into Hugo's image pipeline, so replacing a portrait here updates the website on rebuild. The site generates smaller WebP versions for display while preserving the original framing. A profile's `photo` value must match its filename, including case.
 - `content/publication/`: one folder and `index.md` per paper. Publications are grouped by year and automatically appear on the homepage. Each paper records `authors`, `publication`, `publication_type`, `publication_year`, `doi`, `url_paper`, and `summary`; `date` controls ordering. Use publisher publication years, even when a conference edition has an earlier year. When metadata provides only a month or year, use the first day for ordering; publication pages display the year. `content/publication/_index.md` holds the page introduction and separate thesis summary/link.
-- `config/_default/menus.yaml`: the nine navigation destinations.
+- `config/_default/menus.yaml`: the navigation destinations.
 - `config/_default/params.yaml`: site description, homepage video, and optional public contact email. Setting `contact_email` adds a contact button to Opportunities.
 - `hero_video` in that file: set the YouTube ID, title, description, and poster filename to change the homepage preview. Its poster lives in `static/note-scan-preview.jpg`; replace it with the new video's thumbnail when changing videos. The play button opens a portrait YouTube player; the video loads only after a click. `layouts/partials/hero-video.html` and `static/hero-video.js` control the preview and player.
 - `assets/css/maksil.css`: palette, typography, layout, and mobile styles.
 - `Logo/MakSIL-Logo.png`: original logo; `static/maksil-logo.png` is the served copy. After replacing the original, run `cp Logo/MakSIL-Logo.png static/maksil-logo.png` and rebuild the site. Hugo publishes files from `static/`, so changing `Logo/` alone does not update the website. CSS preserves the complete 3:1 artwork.
 - `Logo/Icon.png`: original shield icon for browser tabs; `static/maksil-icon.png` is the served favicon. After replacing it, run `cp Logo/Icon.png static/maksil-icon.png` and rebuild. Its URL includes a content hash so browsers refresh the icon when it changes.
 
-To publish a project, news update, publication, or resource, add a Markdown page under `content/projects/`, `content/post/`, `content/publication/`, or `content/resources/`. For example:
+To publish a project or publication, add a Markdown page under `content/projects/` or `content/publication/`. Edit the Resources entries in `content/resources/_index.md`. The MoMTSim project page in `content/projects/momtsim/index.md` holds its demonstration video and paper link; use `youtube_id`, `video_title`, `paper_title`, and `url_paper` to update them. For example:
 
 ```yaml
 ---
@@ -40,7 +40,9 @@ featured: true
 Add the full details here. Set draft to false when ready to publish.
 ```
 
-The homepage automatically displays the three newest publications and news updates, and up to three projects marked `featured: true`. Collection pages list all published entries. Empty collections show a clear forthcoming message.
+The homepage automatically displays the three newest publications and up to three projects marked `featured: true`. Collection pages list all published entries. Empty collections show a clear forthcoming message.
+
+News is deactivated: the `cascade._build` settings in `content/post/_index.md` exclude the section and its descendants from published pages and feeds. To reactivate it, remove those settings and restore the News navigation entry and homepage section.
 
 Publication frontmatter example:
 

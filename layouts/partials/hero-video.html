@@ -8,7 +8,7 @@
       <img class="video-preview-image" src="{{ .poster | relURL }}" alt="" width="1078" height="1920" fetchpriority="high">
       <span class="video-preview-label">MakSIL / In action</span>
       <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 4.5v15l12-7.5z" fill="currentColor"/></svg></span>
-      <span class="video-preview-action">Watch the demo <span aria-hidden="true">↗</span></span>
+      <span class="video-preview-action">Watch the demo</span>
     </span>
     <span class="video-preview-caption"><span class="eyebrow">Featured video</span><strong>{{ .title }}</strong><span>{{ .description }}</span></span>
   </a>
@@ -16,6 +16,6 @@
 <dialog id="hero-video-dialog" class="video-dialog" aria-labelledby="hero-video-dialog-title">
   <div class="video-dialog-header"><h2 id="hero-video-dialog-title">{{ .title }}</h2><button type="button" class="video-dialog-close" aria-label="Close video" autofocus><span aria-hidden="true">×</span></button></div>
   <div class="video-player" data-video-player></div>
-  <a class="video-external-link" href="{{ $url }}" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
+  <a class="video-external-link" href="{{ $url }}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 </dialog>
 {{ end }}

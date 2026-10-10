@@ -16,15 +16,16 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="{{ "" | relURL }}" aria-label="MakSIL home">{{ partial "logo.html" . }}</a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav" hidden><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
       <nav id="site-nav" aria-label="Main navigation">
         {{ range site.Menus.main }}<a href="{{ .URL | relURL }}"{{ if eq $.RelPermalink (.URL | relURL) }} aria-current="page"{{ end }}>{{ .Name }}</a>{{ end }}
       </nav>
     </div>
   </header>
   <main id="main">{{ block "main" . }}{{ end }}</main>
-  <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="{{ "" | relURL }}" aria-label="MakSIL home">{{ partial "logo.html" . }}</a><p>Makerere Safe Intelligence Lab<br>Safe intelligence. Shared responsibility.</p><a href="{{ "about/" | relURL }}">About the lab <span aria-hidden="true">↗</span></a></div><div class="container footer-bottom"><span>© {{ now.Year }} MakSIL</span><span>AI safety, with African contexts at the centre.</span><a href="#main">Back to top ↑</a></div></footer>
+  <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="{{ "" | relURL }}" aria-label="MakSIL home">{{ partial "logo.html" . }}</a><p>Makerere Safe Intelligence Lab<br>Safe intelligence. Shared responsibility.</p><a href="{{ "about/" | relURL }}">About the lab {{ partial "arrow.html" "up-right" }}</a></div><div class="container footer-bottom"><span>© {{ now.Year }} MakSIL</span><span>AI safety, with African contexts at the centre.</span><a href="#main">Back to top {{ partial "arrow.html" "up" }}</a></div></footer>
   <script src="{{ "navigation.js" | relURL }}?v={{ md5 (readFile "static/navigation.js") }}" defer></script>
   {{ if and .IsHome site.Params.hero_video }}<script src="{{ "hero-video.js" | relURL }}" defer></script>{{ end }}
+  {{ if and (eq .Section "projects") .Params.youtube_id }}<script src="{{ "resource-video.js" | relURL }}?v={{ md5 (readFile "static/resource-video.js") }}" defer></script>{{ end }}
 </body>
 </html>

@@ -17,9 +17,6 @@ main:
   - name: Resources
     url: /resources/
     weight: 60
-  - name: News
-    url: /post/
-    weight: 70
   - name: Opportunities
     url: /opportunities/
     weight: 80

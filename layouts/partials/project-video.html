@@ -1,0 +1,11 @@
+{{ $video := .Params }}
+<figure class="resource-video">
+  <div class="resource-video-player">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ $video.youtube_id }}" title="{{ $video.video_title }}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <button type="button" class="resource-video-trigger" data-resource-video-play aria-label="Play {{ $video.video_title }}" hidden>
+      <img src="https://i.ytimg.com/vi/{{ $video.youtube_id }}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+      <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 4.5v15l12-7.5z" fill="currentColor"/></svg></span>
+    </button>
+  </div>
+  <figcaption><span>{{ $video.video_title }}</span><a href="https://www.youtube.com/watch?v={{ $video.youtube_id }}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></figcaption>
+</figure>
