@@ -11,6 +11,6 @@ Research opportunities and application details will be published here when avail
 
 ## Research collaborations
 
-We are interested in connections across AI safety, evaluation, security, responsible AI, governance, and African contexts. Collaboration and contact details will be added here.
+We are interested in connections across AI safety, evaluation, security, responsible AI, governance, and African contexts.
 
 [Explore our research](../research/)

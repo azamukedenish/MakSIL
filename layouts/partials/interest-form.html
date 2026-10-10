@@ -1,0 +1,59 @@
+{{ with site.Params.interest_form.action }}
+<section class="interest-section" id="interest-form" aria-labelledby="interest-heading">
+  <header class="interest-heading">
+    <p class="eyebrow">Join the conversation</p>
+    <h2 id="interest-heading">Express your interest</h2>
+    <p>Tell us about your research interests and how you would like to get involved with MakSIL.</p>
+  </header>
+  <form class="interest-form" action="{{ . }}" method="post" aria-labelledby="interest-heading">
+    <input type="hidden" name="_subject" value="MakSIL — Expression of interest">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="{{ "interest-confirmation/" | absURL }}">
+    <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="form-required-note">Fields marked <span>*</span> are required.</p>
+    <div class="interest-form-grid">
+      <div class="form-field">
+        <label for="interest-name">Full name <span aria-hidden="true">*</span></label>
+        <input id="interest-name" type="text" name="name" autocomplete="name" maxlength="120" required>
+      </div>
+      <div class="form-field">
+        <label for="interest-email">Email address <span aria-hidden="true">*</span></label>
+        <input id="interest-email" type="email" name="email" autocomplete="email" maxlength="254" required>
+      </div>
+      <div class="form-field">
+        <label for="interest-affiliation">Institution or organisation <span class="field-optional">(optional)</span></label>
+        <input id="interest-affiliation" type="text" name="affiliation" autocomplete="organization" maxlength="200">
+      </div>
+      <div class="form-field">
+        <label for="interest-type">I am interested in <span aria-hidden="true">*</span></label>
+        <select id="interest-type" name="interest_type" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="Student research">Student research</option>
+          <option value="Research collaboration">Research collaboration</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <fieldset class="form-research-areas form-field-wide" aria-describedby="interest-areas-help">
+        <legend>Research areas <span class="field-optional">(optional)</span></legend>
+        <p class="form-field-help" id="interest-areas-help">Select any areas that interest you.</p>
+        <div class="research-area-options">
+          {{ range site.Data.research }}
+          <label class="form-checkbox" for="interest-area-{{ .id }}">
+            <input id="interest-area-{{ .id }}" type="checkbox" name="research_{{ .id }}" value="{{ .title }}">
+            <span>{{ .title }}</span>
+          </label>
+          {{ end }}
+        </div>
+      </fieldset>
+      <div class="form-field form-field-wide">
+        <label for="interest-message">Tell us about your interest <span aria-hidden="true">*</span></label>
+        <textarea id="interest-message" name="message" rows="5" maxlength="3000" placeholder="A brief introduction, your research interests, and how you would like to contribute." required></textarea>
+      </div>
+    </div>
+    <div class="interest-form-footer">
+      <p>Your details will be sent to MakSIL through <a href="https://formsubmit.co/" target="_blank" rel="noopener noreferrer">FormSubmit</a> so we can respond to your enquiry.</p>
+      <button class="button" type="submit">Send expression of interest {{ partial "arrow.html" "up-right" }}</button>
+    </div>
+  </form>
+</section>
+{{ end }}

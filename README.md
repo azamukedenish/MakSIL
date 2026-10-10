@@ -15,12 +15,12 @@ The preview is at `http://localhost:1313/`; production files are written to `pub
 
 - `layouts/index.html`: homepage hero and section introductions.
 - `data/research.json`: the six research areas, shared by the homepage and Research page.
-- `content/`: page copy. Opportunities intentionally awaits vacancies and contact information.
+- `content/`: page copy. Opportunities includes an expression-of-interest form and awaits advertised vacancies.
 - `data/people.yaml`: names, roles, portrait filenames, and groups on the People page. Leadership currently lists the PI and Co-PI; add future profiles to the PhD, MSc, undergraduate, or alumni group's `members` list.
 - `people/`: original portraits. This folder is mounted into Hugo's image pipeline, so replacing a portrait here updates the website on rebuild. The site generates smaller WebP versions for display while preserving the original framing. A profile's `photo` value must match its filename, including case.
 - `content/publication/`: one folder and `index.md` per paper. Publications are grouped by year and automatically appear on the homepage. Each paper records `authors`, `publication`, `publication_type`, `publication_year`, `doi`, `url_paper`, and `summary`; `date` controls ordering. Use publisher publication years, even when a conference edition has an earlier year. When metadata provides only a month or year, use the first day for ordering; publication pages display the year. `content/publication/_index.md` holds the page introduction and separate thesis summary/link.
 - `config/_default/menus.yaml`: the navigation destinations.
-- `config/_default/params.yaml`: site description, homepage video, and optional public contact email. Setting `contact_email` adds a contact button to Opportunities.
+- `config/_default/params.yaml`: site description, homepage video, optional public contact email, and the Opportunities form endpoint. Setting `contact_email` adds a contact button to Opportunities. `interest_form.action` points to FormSubmit and currently delivers enquiries to `iazamuke@gmail.com`.
 - `hero_video` in that file: set the YouTube ID, title, description, and poster filename to change the homepage preview. Its poster lives in `static/note-scan-preview.jpg`; replace it with the new video's thumbnail when changing videos. The play button opens a portrait YouTube player; the video loads only after a click. `layouts/partials/hero-video.html` and `static/hero-video.js` control the preview and player.
 - `assets/css/maksil.css`: palette, typography, layout, and mobile styles.
 - `Logo/MakSIL-Logo.png`: original logo; `static/maksil-logo.png` is the served copy. After replacing the original, run `cp Logo/MakSIL-Logo.png static/maksil-logo.png` and rebuild the site. Hugo publishes files from `static/`, so changing `Logo/` alone does not update the website. CSS preserves the complete 3:1 artwork.
@@ -41,6 +41,8 @@ Add the full details here. Set draft to false when ready to publish.
 ```
 
 The homepage automatically displays the three newest publications and up to three projects marked `featured: true`. Collection pages list all published entries. Empty collections show a clear forthcoming message.
+
+The Opportunities form uses [FormSubmit](https://formsubmit.co/), so it works with GitHub Pages without a server. After deployment, submit it once and click the activation link sent to `iazamuke@gmail.com`; email delivery is not verified until that step is complete. Keep FormSubmit's default CAPTCHA enabled. Its confirmation email also provides a private endpoint token that can replace the email address in `interest_form.action`. After successful submissions, visitors return to `/interest-confirmation/`. The form markup is in `layouts/partials/interest-form.html`.
 
 News is deactivated: the `cascade._build` settings in `content/post/_index.md` exclude the section and its descendants from published pages and feeds. To reactivate it, remove those settings and restore the News navigation entry and homepage section.
 

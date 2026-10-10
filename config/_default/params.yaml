@@ -2,6 +2,8 @@ description: 'Makerere Safe Intelligence Lab — advancing safe, reliable, and r
 lab_name: Makerere Safe Intelligence Lab
 # Add a verified public contact address when available.
 contact_email: ''
+interest_form:
+  action: https://formsubmit.co/iazamuke@gmail.com
 hero_video:
   youtube_id: QZ0LDkXiBqI
   title: Note Scan

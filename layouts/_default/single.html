@@ -1,1 +1,15 @@
-{{ define "main" }}<article class="container page-content"><header class="page-heading"><p class="eyebrow">{{ .Params.eyebrow | default "MakSIL" }}</p><h1>{{ .Title }}</h1>{{ with .Params.intro }}<p class="page-intro">{{ . }}</p>{{ end }}</header><div class="prose">{{ .Content }}{{ if and (eq .RelPermalink ("opportunities/" | relURL)) site.Params.contact_email }}<p><a class="button" href="mailto:{{ site.Params.contact_email }}">Contact MakSIL {{ partial "arrow.html" "up-right" }}</a></p>{{ end }}</div></article>{{ end }}
+{{ define "main" }}
+{{ $isOpportunities := eq .RelPermalink ("opportunities/" | relURL) }}
+<article class="container page-content{{ if or (eq .RelPermalink ("about/" | relURL)) $isOpportunities }} full-width-page{{ end }}">
+  <header class="page-heading">
+    <p class="eyebrow">{{ .Params.eyebrow | default "MakSIL" }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="page-intro">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">
+    {{ .Content }}
+    {{ if and $isOpportunities site.Params.contact_email }}<p><a class="button" href="mailto:{{ site.Params.contact_email }}">Contact MakSIL {{ partial "arrow.html" "up-right" }}</a></p>{{ end }}
+  </div>
+  {{ if $isOpportunities }}{{ partial "interest-form.html" . }}{{ end }}
+</article>
+{{ end }}

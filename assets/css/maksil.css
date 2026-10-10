@@ -721,6 +721,9 @@ a.research-card:hover .card-top {
 .prose {
   max-width:750px
 }
+.full-width-page .page-heading,.full-width-page .page-intro,.full-width-page .prose {
+  max-width:none
+}
 .prose h2 {
   font-size:28px;
   margin:36px 0 18px
@@ -733,6 +736,145 @@ a.research-card:hover .card-top {
   color:var(--red);
   text-decoration:underline;
   text-underline-offset:4px
+}
+.interest-section {
+  margin-top:64px;
+  padding-top:48px;
+  border-top:1px solid var(--line)
+}
+.interest-heading {
+  margin-bottom:28px
+}
+.interest-heading .eyebrow {
+  color:var(--red);
+  margin-bottom:16px
+}
+.interest-heading h2 {
+  font-size:clamp(28px,3vw,42px);
+  line-height:1.2;
+  letter-spacing:-1px;
+  margin-bottom:16px
+}
+.interest-heading p:last-child {
+  margin-bottom:0
+}
+.interest-form {
+  padding:32px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--white)
+}
+.form-honeypot {
+  display:none
+}
+.form-required-note,.form-field-help {
+  font-size:var(--text-small)
+}
+.form-required-note {
+  margin-bottom:24px
+}
+.interest-form-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:28px
+}
+.form-field {
+  min-width:0
+}
+.form-field label,.form-research-areas legend {
+  display:block;
+  font-size:var(--text-copy);
+  font-weight:600;
+  margin-bottom:10px
+}
+.form-field label>span:not(.field-optional),.form-required-note span {
+  color:var(--red)
+}
+.field-optional {
+  font-size:var(--text-small);
+  font-weight:400
+}
+.form-field input,.form-field select,.form-field textarea {
+  display:block;
+  width:100%;
+  min-height:48px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:var(--white);
+  color:var(--black);
+  font:inherit;
+  font-size:var(--text-copy);
+  line-height:1.5
+}
+.form-field textarea {
+  resize:vertical
+}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus {
+  outline:2px solid var(--red);
+  outline-offset:2px;
+  border-color:var(--red)
+}
+.form-field-wide {
+  grid-column:1/-1
+}
+.form-research-areas {
+  min-width:0;
+  padding:0;
+  margin:0;
+  border:0
+}
+.form-research-areas legend {
+  padding:0
+}
+.form-field-help {
+  margin-bottom:14px
+}
+.research-area-options {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px 24px
+}
+.form-checkbox {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:44px;
+  font-size:var(--text-copy);
+  line-height:1.5;
+  cursor:pointer
+}
+.form-checkbox input {
+  width:18px;
+  height:18px;
+  margin:0;
+  flex-shrink:0;
+  accent-color:var(--red)
+}
+.form-checkbox input:focus-visible {
+  outline:2px solid var(--red);
+  outline-offset:4px
+}
+.interest-form-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-top:28px
+}
+.interest-form-footer p {
+  max-width:580px;
+  margin:0;
+  font-size:var(--text-small)
+}
+.interest-form-footer a {
+  color:var(--red);
+  text-decoration:underline;
+  text-underline-offset:4px
+}
+.interest-form-footer .button {
+  flex-shrink:0;
+  cursor:pointer
 }
 .resource-entry {
   display:grid;
@@ -1262,6 +1404,20 @@ a.research-card:hover .card-top {
   }
   .page-intro {
     font-size:21px
+  }
+  .interest-section {
+    margin-top:44px;
+    padding-top:32px
+  }
+  .interest-form {
+    padding:22px
+  }
+  .interest-form-grid,.research-area-options {
+    grid-template-columns:1fr
+  }
+  .interest-form-footer {
+    align-items:stretch;
+    flex-direction:column
   }
   .feed {
     grid-template-columns:1fr
