@@ -42,7 +42,7 @@ Add the full details here. Set draft to false when ready to publish.
 
 The homepage automatically displays the three newest publications and up to three projects marked `featured: true`. Collection pages list all published entries. Empty collections show a clear forthcoming message.
 
-The Opportunities form uses [FormSubmit](https://formsubmit.co/), so it works with GitHub Pages without a server. After deployment, submit it once and click the activation link sent to `iazamuke@gmail.com`; email delivery is not verified until that step is complete. Keep FormSubmit's default CAPTCHA enabled. Its confirmation email also provides a private endpoint token that can replace the email address in `interest_form.action`. After successful submissions, visitors return to `/interest-confirmation/`. The form markup is in `layouts/partials/interest-form.html`.
+The Opportunities form uses [FormSubmit](https://formsubmit.co/), so it works with GitHub Pages without a server. `interest_form.action` uses the token supplied in the activation email, keeping the receiving email address out of the published form's HTML. When connecting a different receiving address, submit the form once and confirm the activation email, then update the endpoint with its new token. Keep FormSubmit's default CAPTCHA enabled. After successful submissions, visitors return to `/interest-confirmation/`. The form markup is in `layouts/partials/interest-form.html`.
 
 News is deactivated: the `cascade._build` settings in `content/post/_index.md` exclude the section and its descendants from published pages and feeds. To reactivate it, remove those settings and restore the News navigation entry and homepage section.
 
