@@ -20,6 +20,8 @@ groups:
     members:
       - name: Jesse Kigula
         qualification: MSc in Computer Science
+      - name: Raymond Musoke
+        qualification: MSc in Computer Science
   - id: undergraduate-students
     title: Undergraduate Students
     empty: Prospective undergraduate students interested in AI safety research are welcome to express their interest.
