@@ -12,17 +12,19 @@ groups:
         photo: CoPI.png
   - id: phd-students
     title: PhD Students
-    empty: PhD student profiles will be added here.
+    empty: Prospective PhD students interested in AI safety research are welcome to express their interest.
     members: []
   - id: msc-students
-    title: MSc Students of Computer Science
-    empty: MSc Computer Science student profiles will be added here.
-    members: []
+    title: MSc Students
+    empty: MSc student profiles will be added here.
+    members:
+      - name: Jesse Kigula
+        qualification: MSc in Computer Science
   - id: undergraduate-students
     title: Undergraduate Students
-    empty: Undergraduate student profiles will be added here.
+    empty: Prospective undergraduate students interested in AI safety research are welcome to express their interest.
     members: []
   - id: alumni
     title: Alumni
-    empty: Alumni profiles will be added here.
+    empty: Our alumni community will grow as students and researchers complete their time at MakSIL.
     members: []
