@@ -13,15 +13,23 @@ groups:
   - id: phd-students
     title: PhD Students
     empty: Prospective PhD students interested in AI safety research are welcome to express their interest.
-    members: []
+    members:
+      - name: Gilbert Yiga
+        role: PhD Student
+        qualification: Computer Science
+        photo: PhDStudent1.png
   - id: msc-students
     title: MSc Students
     empty: MSc student profiles will be added here.
     members:
       - name: Jesse Kigula
-        qualification: MSc in Computer Science
+        qualification: Computer Science
       - name: Raymond Musoke
-        qualification: MSc in Computer Science
+        qualification: Computer Science
+      - name: Calvin Kiiza Bamwesigye
+        role: MSc Student
+        qualification: Mathematical Sciences
+        photo: MScStudent3.png
   - id: undergraduate-students
     title: Undergraduate Students
     empty: Prospective undergraduate students interested in AI safety research are welcome to express their interest.
