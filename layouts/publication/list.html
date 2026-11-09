@@ -40,6 +40,9 @@
     <p class="publication-authors">{{ .author }}</p>
     <p>{{ .summary }}</p>
     <a class="text-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">Read thesis abstract {{ partial "arrow.html" "up-right" }}</a>
+    {{ if .youtube_id }}
+    {{ partial "project-video.html" (dict "Params" .) }}
+    {{ end }}
   </section>
   {{ end }}
 </div>
