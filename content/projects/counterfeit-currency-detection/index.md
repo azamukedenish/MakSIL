@@ -6,6 +6,7 @@ summary: DeepFakesUG explores deep learning for counterfeit Ugandan banknote det
 featured: true
 youtube_id: ARyCxbDCzBc
 video_title: Counterfeit currency detection demonstration
+video_aspect_ratio: "16 / 9"
 paper_title: "DeepFakesUG: Detecting Counterfeit Ugandan Banknotes Using Deep Learning"
 url_paper: https://link.springer.com/chapter/10.1007/978-3-032-05063-2_7
 ---

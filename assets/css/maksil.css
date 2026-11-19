@@ -787,7 +787,7 @@ a.research-card:hover .card-top {
 .resource-video-player {
   position:relative;
   overflow:hidden;
-  aspect-ratio:16/9;
+  aspect-ratio:var(--video-aspect-ratio,16/9);
   background:var(--black)
 }
 .resource-video-player iframe {
@@ -1011,6 +1011,11 @@ a.research-card:hover .card-top {
 }
 .publication-thesis>p:not(.eyebrow) {
   max-width:750px
+}
+.publication-thesis .resource-video,.project-page .resource-video {
+  width:100%;
+  max-width:calc(80svh * var(--video-aspect-ratio,16/9));
+  margin-inline:auto
 }
 .publication-back {
   margin-bottom:36px

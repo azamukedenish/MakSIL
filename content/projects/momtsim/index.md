@@ -6,6 +6,7 @@ summary: A multi-agent simulation platform for generating synthetic mobile money
 featured: true
 youtube_id: MnAUVsZ1Xy8
 video_title: MoMTSim demonstration
+video_aspect_ratio: "1014 / 720"
 paper_title: "MoMTSim: A Multi-Agent-Based Simulation Platform Calibrated for Mobile Money Transactions"
 url_paper: https://ieeexplore.ieee.org/abstract/document/10623453
 ---

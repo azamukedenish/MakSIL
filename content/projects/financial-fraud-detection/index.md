@@ -6,6 +6,7 @@ summary: Uses MoMTSim-generated mobile money transaction datasets to compare fra
 featured: true
 youtube_id: Ip0TG5wNCok
 video_title: Financial fraud detection demonstration
+video_aspect_ratio: "1108 / 720"
 paper_title: Financial Fraud Detection Using Rich Mobile Money Transaction Datasets
 url_paper: https://link.springer.com/chapter/10.1007/978-3-031-81573-7_16
 ---

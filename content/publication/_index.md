@@ -9,4 +9,5 @@ thesis:
   url: https://www.azamuke.com/publications
   youtube_id: 0irxlKTrOZk
   video_title: PhD thesis presentation slides
+  video_aspect_ratio: "954 / 720"
 ---
